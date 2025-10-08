@@ -12,7 +12,6 @@ import z from "zod"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -22,10 +21,9 @@ import { Button } from "@/components/ui/button"
 import { Loader2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 
-import { useChat } from '@ai-sdk/react';
-import { useState } from 'react';
 
-function page() {
+
+function Page() {
   const params = useParams()
   //console.log("params: ", params)
   const form = useForm<z.infer<typeof messageSchema>>({
@@ -53,7 +51,7 @@ function page() {
         } catch (error) {
             console.error("User not accept message", error)
                   const axiosError = error as AxiosError<apiResponse>
-                  let errorMessage = axiosError.response?.data.message
+                  const errorMessage = axiosError.response?.data.message
                   toast('Error',
                     {
                       description: errorMessage || 'Something went wrong!',
@@ -174,4 +172,4 @@ function page() {
   );
 }
 
-export default page
+export default Page

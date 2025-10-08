@@ -2,8 +2,6 @@
 import {MessageCard} from '@/components/messageCard'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { Switch } from '@/components/ui/switch'
-
 import { message } from '@/model/user'
 import { acceptMessageSchema } from '@/Schemas/acceptMassageSchema'
 import { apiResponse } from '@/types/apiResponse'
@@ -15,9 +13,8 @@ import { useSession } from 'next-auth/react'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import { check } from 'zod/v4'
 import { Controller } from "react-hook-form"
-function dashboard() {
+function Dashboard() {
   const [messages, setMessages] = useState<message[]>([])
   const [loading, setLoading] = useState(false)
   const [isSwitching, setIsSwitching] = useState(false)
@@ -224,5 +221,5 @@ function dashboard() {
   );
 }
 
-export default dashboard
+export default Dashboard
 

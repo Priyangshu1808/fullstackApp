@@ -17,15 +17,11 @@ import { apiResponse } from "@/types/apiResponse"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-import { getServerSession } from "next-auth"
-import { redirect } from "next/navigation"
-import { authOptions } from "@/app/api/auth/[...nextauth]/options"
 
 
  export default function ProfileForm() {
@@ -88,7 +84,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/options"
     } catch (error) {
       console.error("Error in signup of user", error)
       const axiosError = error as AxiosError<apiResponse>
-      let errorMessage = axiosError.response?.data.message
+      const errorMessage = axiosError.response?.data.message
       toast('Error',
         {
           description: errorMessage || 'Something went wrong!',

@@ -1,5 +1,4 @@
 'use client'
-import { useSession, signOut } from "next-auth/react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -12,7 +11,6 @@ import { Loader2 } from "lucide-react"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -20,11 +18,6 @@ import {
 } from "@/components/ui/form"
 import { signInSchema } from "@/Schemas/signInSchema"
 import { signIn } from "next-auth/react"
-import { useEffect } from "react"
-import { apiResponse } from "@/types/apiResponse"
-import axios, { AxiosError } from "axios"
-import { getServerSession } from "next-auth"
-import { authOptions } from "@/app/api/auth/[...nextauth]/options"
 
 
 

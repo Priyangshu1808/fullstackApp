@@ -21,7 +21,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-react'
 
-export default function verifyAccount() {
+export default function VerifyAccount() {
 
     const router = useRouter()
     const params = useParams()
